@@ -1,0 +1,5 @@
+[dbserver]
+host_db
+
+[all:vars]
+env="db"

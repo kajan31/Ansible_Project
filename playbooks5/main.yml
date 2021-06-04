@@ -1,0 +1,9 @@
+---
+- name: Creation User
+  hosts: webserver
+  remote_user: root
+  vars_files:
+    - "../vars/{{env}}_vars.yml"
+    - "../vars/{{env}}_secret.yml"
+  roles:      
+    - role: apache      

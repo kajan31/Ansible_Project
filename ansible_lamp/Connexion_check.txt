@@ -1,0 +1,17 @@
+--- Connexion Check Procedure ---
+
+- Check file : /etc/hosts 
+      must contain : @Ip host_web
+                     @Ip host_db
+
+- Check file : /etc/ansible/hosts
+      must contain : [host_web]
+		     @Ip
+
+		     [host_db]
+		     @Ip
+- Check if ssh key copy in hosts
+
+- Check connexion : 
+	sudo ansible host_web -m ping -u root
+	sudo ansible host_db -m ping -u root

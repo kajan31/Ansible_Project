@@ -1,0 +1,25 @@
+---
+- name: Install php
+  apt:
+    name: php5
+    state: latest
+
+- name: Start php
+  service:
+    name: php7
+    state: started
+  register: verif_php
+
+- name: Verif php
+  debug:
+          msg: "{{verif_php.status}}"
+
+- name: Intialisation fichier index
+  template:
+    src: 'templates/index.php.j2'
+    dest: '/var/www/'
+
+- name: Fichier phpinfo
+  copy:
+    src: 'files/phpinfo.php'
+    dest: '/var/www/' 

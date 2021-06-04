@@ -1,0 +1,16 @@
+---
+- name: Configuration des machines webserveur 
+  hosts: webserver
+  remote_user: root
+  roles:      
+    - role: apache
+    - role: php
+    - role: mysql
+
+- name: Configuration des machines dbserver
+  hosts: dbserver
+  remote_user: root
+  roles:
+    - role: apache
+    - role: php
+    - role: mysql

@@ -1,0 +1,23 @@
+---
+
+- name: Install Apache
+  apt:
+    name: apache2 
+    state: present
+
+- name: Start Apache
+  service:
+    name: apache2
+    state: started
+  register: verif
+
+- name: Verif Apache
+  debug:
+          msg: "{{verif.status}}"
+
+- name: Mettre en place fichier de conf 
+  copy:
+    src: files/apache2.conf
+    dest: /etc/apache2/apache.conf
+  notify: Restart Apache
+

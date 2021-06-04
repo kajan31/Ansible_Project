@@ -1,0 +1,6 @@
+[webserver]
+host_web
+
+[all:vars]
+env="web"
+

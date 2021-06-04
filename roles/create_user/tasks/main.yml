@@ -1,0 +1,14 @@
+---
+- name: "Ajouter un user"
+  user:
+    name: "{{item.name}}"
+    password: "{{item.password}}"
+  when: ansible_facts['distribution'] == "Ubuntu"
+  loop:
+    - name: "{{user1}}"
+      password: "{{password1 | password_hash('sha512') }}"
+    - name: "{{user2}}"
+      password: "{{password2 | password_hash('sha512') }}"
+
+               
+          

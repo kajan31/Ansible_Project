@@ -1,0 +1,7 @@
+---
+
+- name: Installer vim
+  apt:
+    name: vim
+    state: present  
+

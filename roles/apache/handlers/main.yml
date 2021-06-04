@@ -1,0 +1,17 @@
+---
+
+- name: Restart Apache
+  service:
+    name: apache2
+    state: restarted
+  when: ansible_facts['os_family']|lower == 'debian'
+
+- name: Petit curl la base
+  ansible.builtin.shell: curl host1
+  delegate_to: 127.0.0.1
+  register: curl  
+  when: ansible_facts['os_family']|lower == 'debian'
+
+- name: Verif du curl
+  debug:
+    msg: "{{curl.stdout_lines}}"

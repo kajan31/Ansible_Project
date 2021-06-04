@@ -1,0 +1,13 @@
+---
+- hosts: webserver
+  remote_user: root
+  vars_files:
+    - "../vars/{{env}}_vars.yml"
+  tasks:
+    - name: debug
+      debug:
+        msg: "ici env : {{env}}"
+    - name: instal/desinstal vim
+      apt:
+        name: vim
+        state: "{{vim_state}}"

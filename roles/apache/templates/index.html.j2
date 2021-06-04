@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Website Kajan </title>
+  </head>
+  <body>
+    {% if env == "dev" %}
+    <p> Bonjou les dev <p>
+    {% elif env == "int" %}
+    <p> Bonjou les intégrations </p>
+    {% endif %}
+  </body>
+</html>
+

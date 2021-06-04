@@ -1,0 +1,9 @@
+---
+- name: Installation des elements pour host1
+  hosts: host1
+  remote_user: root
+  tasks:
+    - name: Installer Vim
+      apt:
+        name: vim
+        state: present

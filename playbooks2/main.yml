@@ -1,0 +1,15 @@
+---
+- hosts: webserver
+  remote_user: root
+  tasks:
+    - name: debug
+      debug:
+        msg: "Petit test tu connais"
+
+- hosts: dbserver
+  remote_user: root
+  tasks:
+    - name: installer vim
+      apt:
+        name: vim
+        state: present
